@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let sup of suball,let i = index" class="col-md-4 ">
+            
+                <img [src]="sup.slug" class="img-fluid w-100 h-100" alt="">
+            <h3 class="text-bg-dark">{{sup.name}}</h3>
+        </div>
+      
+    </div>
+</div>

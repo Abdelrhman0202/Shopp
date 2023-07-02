@@ -1,0 +1,11 @@
+<div class="container">
+    <h3>Total favorites {{allWishList?.count}}</h3>
+    <div class="row">
+        <div *ngFor="let onew of allWishList?.data" class="col-md-2">
+            <div>
+                <img class="img-fluid " [src]="onew.imageCover" alt="">
+                <i (click)="removelist(onew._id)" class="fa-solid alert alert-danger fa-trash-can pointer "></i>
+            </div>
+        </div>
+    </div>
+</div>

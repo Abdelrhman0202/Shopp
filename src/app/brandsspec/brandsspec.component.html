@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let bra of brandall,let i = index" class="col-md-4 ">
+            
+                <img [src]="bra.slug" class="img-fluid w-100 h-100" alt="">
+            <h3 class="text-bg-dark">{{bra.name}}</h3>
+        </div>
+      
+    </div>
+</div>

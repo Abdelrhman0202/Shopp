@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row g-2">
+        <div *ngFor="let product of allProducts;let i = index" class="col-md-2 ">
+            <div  class="prod">
+                <img class="img-fluid" [src]="product.imageCover"   alt="">
+                <div class="layer ">
+                   <h3>{{product.title.split(" ").slice(0.5).join(" ")}}</h3>
+                   <p>{{product.description.slice(0.10)}}....</p>
+                   <span  [routerLink]="['/productdetails',product._id]" style="cursor: pointer;">productdetails</span>
+                  <div class="carts ">
+                    <button (click)="addtocart(product._id)"  class="btn btn-warning">Add To Cart</button>
+                    <i (click)="addwishlist(product._id,i)" class="fa-regular fa-star check "></i>
+                  </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

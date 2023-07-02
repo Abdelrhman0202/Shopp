@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-md-6">
+            <h3 class="mt-5 mb-5">Shopping cart</h3>
+
+            <table class="w-100 ">
+                <thead class="text-white bg-black">
+                    <tr>
+                        <th>
+                            productdetails
+                        </th>
+                        <th>
+                            quantity
+                        </th>
+                        <th>
+                            price
+                        </th>
+                        <th>
+                            total
+                        </th>
+                        <th>
+                            delete
+                        </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of cartDetails?.products">
+                        <td>
+                            <img style="width: 100px;" [src]="product.product.imageCover" alt="">
+                        </td>
+                        <td>
+                            <button (click)="updateitemcount(product.product._id,product.count+1)" class="bg-warning rounded px-1 text-white btn btn-sm">+</button>
+                           {{product.count}}
+                            <button (click)="updateitemcount(product.product._id,product.count-1)"  class="bg-warning rounded px-1 text-white btn btn-sm">-</button>
+                        </td>
+                        <td>
+                            {{product.price}}
+                        </td>
+                        <td>
+                            {{product.count*product.price}}
+                        </td>
+                        <td>
+                            <i (click)="removecart(product.product._id)"
+                                class="fa-solid text-warning fa-trash-can pointer "></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+        <div class="col-md-6 lay">
+            <h6>oredersummary</h6>
+            <h6>total:{{cartDetails?.totalCartPrice}}</h6>
+            <div class=" d-flex  justify-content-between align-items-end btm">
+
+                <div class="col-sm-6 col-md-6"><button class="btn btn-warning w-75 h-50">Cash Order</button></div>
+                <div class="col-sm-6 col-md-6"><button class="btn btn-warning w-100 h-50"> <a class="text-decoration-none text-dark" routerLink="/checkout">Checkout Online</a> </button></div>
+            </div>
+        </div>
+
+    </div>
+</div>

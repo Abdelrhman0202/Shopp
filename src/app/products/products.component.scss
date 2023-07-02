@@ -1,0 +1,26 @@
+.layer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+    
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 1;
+    }
+    color: white;
+}
+.prod{
+    position: relative;
+}
+.carts{
+display: flex;
+justify-content: space-between;
+margin-top: 100px;
+}
